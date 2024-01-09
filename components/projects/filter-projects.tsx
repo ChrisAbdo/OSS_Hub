@@ -1,9 +1,8 @@
 "use client"
 
 import React from "react"
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 
-import { Button } from "@/components/ui/button"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import {
   Select,
@@ -23,7 +22,6 @@ export default function FilterProjects({ projects }: { projects: any }) {
   ]
   const router = useRouter()
 
-  const pathname = usePathname()
   const searchParams = useSearchParams()!
 
   const createQueryString = React.useCallback(
