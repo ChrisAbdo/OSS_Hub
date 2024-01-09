@@ -39,7 +39,6 @@ export default function FilterProjects({ projects }: { projects: any }) {
     <div className="flex gap-4">
       <Select
         onValueChange={(value) => {
-          // if value is default, remove the query from the URL
           if (value === "default") {
             const params = new URLSearchParams(searchParams)
             params.delete("sort")
