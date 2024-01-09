@@ -40,7 +40,7 @@ export default async function Home({
   })
 
   const filteredProjects = frameworkQuery
-    ? projects.filter((project) => project.framework === frameworkQuery)
+    ? projects.filter((project: any) => project.framework === frameworkQuery)
     : projects
 
   return (
