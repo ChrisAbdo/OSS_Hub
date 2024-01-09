@@ -19,7 +19,7 @@ export default async function Home({
   const projectCount = await prisma.project.count()
   const sortQuery = searchParams["sort"]
   const frameworkQuery = searchParams["framework"]
-
+  //
   const projects = await prisma.project.findMany({
     orderBy: sortQuery
       ? {
