@@ -1,27 +1,13 @@
-// import React from "react"
-
-// import AuthDrawer from "@/components/auth/auth-drawer"
-
-// export default function Navbar() {
-//   return (
-//     <div>
-//       Navbar
-//       <AuthDrawer />
-//     </div>
-//   )
-// }
-
 "use client"
 
 import React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { HamburgerMenuIcon, RocketIcon } from "@radix-ui/react-icons"
-import { signIn, useSession } from "next-auth/react"
+import { RocketIcon } from "@radix-ui/react-icons"
+import { useSession } from "next-auth/react"
 
 import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import AuthDrawer from "@/components/auth/auth-drawer"
 import ProfileDropdown from "@/components/auth/profile-dropdown"
 import { ModeToggle } from "@/components/layout/mode-toggle"
@@ -60,21 +46,6 @@ export default function MainNav() {
             >
               Upload Project
             </Link>
-
-            {session ? (
-              <Link
-                href="/profile"
-                prefetch={false}
-                className={cn(
-                  "text-sm font-light transition-colors hover:text-foreground/80",
-                  pathname === "/profile"
-                    ? "text-foreground"
-                    : "text-foreground/60"
-                )}
-              >
-                Profile
-              </Link>
-            ) : null}
           </div>
         </div>
         <div className="flex lg:hidden">
@@ -87,7 +58,7 @@ export default function MainNav() {
           </button>
         </div>
         <div className="flex items-center space-x-1">
-          {session ? <ProfileDropdown /> : <AuthDrawer text="Get Started" />}
+          {session ? <ProfileDropdown /> : <AuthDrawer text="Log In" />}
           <ModeToggle />
         </div>
       </nav>
